@@ -1,22 +1,32 @@
 <div>
 
-  <div *ngFor="let historyItem of history" class="historyItem">
+  <div *ngIf="!showNoHistoryMessage">
 
+  <div *ngFor="let historyItem of history" class="historyItem">
 
       <article class="card">
         <header class="card__title">
-          <h3>History Entry #</h3>
+          <!--<h3>History Entry</h3>-->
+          <!--{{ historyItem }}-->
         </header>
         <figure class="card__thumbnail">
-          {{ historyItem }}
+          <!--{{ historyItem }}-->
         </figure>
         <main class="card__description">
-          'Output preview'
+          <!--'Output preview'-->
+          {{ historyItem }}
         </main>
-        <a href="#" class="button">Go to entry</a>
+        <button id="retrieveButton" (click)="retrieveText(getRightText(historyItem))" class="button">Retrieve Text</button>
       </article>
 
+  </div>
 
+  </div>
+
+  <div *ngIf="showNoHistoryMessage">
+    <h1 style="border: solid black 1px; padding: 10px">Sorry -- No History to Show!</h1>
+    <!--<p>{{ currentUser }}</p>-->
+    <!--<p>{{ showNoHistoryMessage }}</p>-->
   </div>
 
   <!--<div class="left">-->

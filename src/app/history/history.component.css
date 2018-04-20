@@ -45,3 +45,7 @@ div {
   text-align: center;
   transition: .3s ease-out;
 }
+
+#retrieveButton {
+  width: 100%;
+}

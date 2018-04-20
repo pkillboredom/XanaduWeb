@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
     if (this.afAuth.auth.currentUser == null) {
       this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
         .then(value => {
+          // window.location.reload();
           this.headerTitle = this.afAuth.auth.currentUser.email;
         })
         .catch(err => {
@@ -37,6 +38,7 @@ export class HeaderComponent implements OnInit {
       this.afAuth.auth.signOut()
         .then(value => {
           this.headerTitle = 'User has signed out!';
+          // window.location.reload();
         })
         .catch(err => {
           this.headerTitle = 'Something went wrong signing out the user!';

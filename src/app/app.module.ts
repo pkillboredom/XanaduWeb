@@ -14,6 +14,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import {DataService} from './data.service';
 
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { FirebaseService } from './firebase.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,10 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    ImageCropperModule
+    ImageCropperModule,
+    HttpModule
   ],
-  providers: [AngularFireAuth, DataService],
+  providers: [AngularFireAuth, DataService, FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

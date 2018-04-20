@@ -8,4 +8,6 @@ div {
   margin-bottom: 20px;
   text-align: center;
   background-color: white;
+  padding-left: 5px;
+  padding-right: 5px;
 }
